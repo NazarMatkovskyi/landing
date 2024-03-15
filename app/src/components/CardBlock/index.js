@@ -42,16 +42,17 @@ const CardBlock = () => {
         title: '',
         subtitle: ''
       })
+      const modal = new Modal(document.getElementById('exampleModal'))
+      modal.hide() // Hide the modal after adding todo
     }
   }
 
   const handleEdit = () => {
-    dispatch(editTodoAction(editTodo)) // Edited to dispatch directly the editTodo object
-    setEditTodo(null) // Reset editTodo state after edit
-    const modal = new Modal(document.getElementById('exampleModal')) // Get the modal instance
-    modal.hide() // Hide the modal
+    dispatch(editTodoAction(editTodo))
+    setEditTodo(null)
+    const modal = new Modal(document.getElementById('exampleModal'))
+    modal.hide() // Hide the modal after editing todo
   }
-
   const handleClear = () => setEditTodo(null)
 
   return (
@@ -99,7 +100,7 @@ const CardBlock = () => {
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-dark" data-bs-dismiss={newTodo.subtitle && 'modal'}
+              <button type="button" className="btn btn-dark" data-bs-dismiss={'modal'}
                       onClick={editTodo ? handleEdit : handleAddTodo}>{editTodo ? 'Save changes' : 'Save Todo'}</button>
             </div>
           </div>
