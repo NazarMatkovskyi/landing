@@ -1,17 +1,17 @@
-import './App.css';
+import React from 'react'
+import { Provider } from 'react-redux'
+import store from './store/rootReducer'
+import { CardBlock, Footer, Header, Info } from './components'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        Header
-      </header>
-      <div>Lorem ipsudasddasdsam dolor sit amet, consectetur adipisicing elit. Aliquam animi aperiam beatae culpa dicta hic iste magnam maxime non, reprehenderit sed similique tempora, voluptate voluptatem
-        voluptatum.
-        <span>Heysaq</span>
-      </div>
-    </div>
-  );
+    <Provider store={store}>
+      <Header/>
+      <Info/>
+      <CardBlock/>
+      <Footer />
+    </Provider>
+  )
 }
 
-export default App;
+export default App

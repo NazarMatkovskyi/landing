@@ -1,0 +1,75 @@
+.footer {
+  display: grid;
+
+  &_inner {
+    height: 500px; /* Initial height */
+    z-index: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--white);
+    padding: 0 6rem;
+
+    &_left img {
+      max-width: 100%; /* Ensure image does not exceed its container */
+      max-height: 100%; /* Ensure image does not exceed its container */
+      object-fit: contain; /* Maintain aspect ratio */
+    }
+
+    &_rigth {
+      display: grid;
+      gap: .5rem;
+      justify-items: start;
+      font-size: 20px;
+
+      & h3 {
+        color: var(--green);
+        font-size: 36px;
+        line-height: 42px;
+        font-weight: 500;
+      }
+
+      & a {
+        color: var(--white);
+        text-decoration: none;
+      }
+
+      & a:last-child {
+        color: var(--white);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &_end {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    background: var(--background-line);
+  }
+
+  /* Mobile adaptation */
+  @media screen and (max-width: 900px) {
+    .footer {
+      &_inner {
+        height: auto; /* Adjust height to fit content */
+        padding: 2rem; /* Adjust padding */
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        text-align: center;
+      }
+
+      &_rigth {
+        justify-items: center; /* Center align content */
+      }
+
+      &_end {
+        padding: 1rem; /* Adjust padding */
+      }
+    }
+  }
+}

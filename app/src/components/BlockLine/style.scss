@@ -1,0 +1,87 @@
+.block {
+  background: var(--background-line);
+  z-index: 1;
+
+  &_inner_rotate {
+    flex-direction: row-reverse;
+  }
+
+  &_inner,
+  &_inner_rotate {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    height: 30vh; /* Initial height */
+    padding: 0 3rem;
+
+    &_left {
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 600px;
+      line-height: 680px;
+      z-index: 0;
+      padding-top: 2rem;
+      font-weight: 700;
+    }
+
+    &_right {
+      display: grid;
+      gap: .5rem;
+    }
+
+    &_right span {
+      font-size: 36px;
+      color: var(--green);
+      line-height: 42px;
+      font-weight: 500;
+    }
+
+    &_right p {
+      font-size: 16px;
+      color: var(--white);
+      line-height: 19px;
+    }
+  }
+
+  @media screen and (max-width: 1028px) {
+    .block {
+      &_inner {
+        &_left {
+          display: none;
+        }
+      }
+    }
+  }
+
+  /* Mobile adaptation */
+  @media screen and (max-width: 900px) {
+    .block {
+      height: auto; /* Adjust height to fit content */
+      padding: 2rem 1rem;
+      &_inner,
+      &_inner_rotate {
+        flex-direction: column; /* Change to column layout */
+        padding: 1rem 0;
+        justify-content: flex-start;
+        text-align: center;
+        height: max-content;
+      }
+
+      &_left {
+        font-size: 200px; /* Decrease font size */
+        line-height: 220px; /* Adjust line height */
+        padding-top: 1rem; /* Adjust top padding */
+      }
+
+      &_right span {
+        font-size: 24px; /* Decrease font size */
+        line-height: 28px; /* Adjust line height */
+      }
+
+      &_right p {
+        font-size: 14px; /* Decrease font size */
+        line-height: 16px; /* Adjust line height */
+      }
+    }
+  }
+}

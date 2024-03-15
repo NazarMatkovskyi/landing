@@ -1,0 +1,59 @@
+.info {
+  display: grid;
+
+  &_inner {
+    height: 70vh;
+    z-index: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 6rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--white);
+    padding: 0 6rem;
+    font-size: 16px;
+    line-height: 24px;
+
+    &_left {
+      display: grid;
+      position: relative;
+      gap: 1.5rem;
+      padding: 2rem 0 2rem 2rem;
+
+      & svg {
+        position: absolute;
+        left: 0;
+        z-index: 0;
+        bottom: 0;
+      }
+
+      & h3 {
+        font-size: 72px;
+        line-height: 64px;
+        font-weight: 700;
+        z-index: 1;
+      }
+      & p{
+        z-index: 1;
+      }
+    }
+  }
+
+  /* Hide right block and adjust layout on small screens */
+  @media screen and (max-width: 900px) {
+    .info {
+      &_inner {
+        grid-template-columns: 1fr; /* Only one column on small screens */
+        padding: 0 2rem; /* Adjust padding */
+
+      &_right {
+        display: none; /* Hide right block */
+      }
+    }
+    }
+
+  }
+}

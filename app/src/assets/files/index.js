@@ -1,0 +1,5 @@
+export { Line } from './Line'
+export { Plus } from './Plus'
+export { Rectangle } from './Rectangle'
+export { Remove } from './Remove'
+export { Edit } from './Edit'

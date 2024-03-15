@@ -1,0 +1,117 @@
+.card_list {
+  &_inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  &_inner_list {
+    position: relative;
+    display: grid;
+    gap: 1rem;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 24px;
+    transition: background ease-in-out 0.3s; /* Changed duration to 0.3s */
+    background: #232526;
+
+    &:hover { /* Changed $hover to &:hover */
+      background: #191b1c; /* Corrected color format */
+    }
+
+    &_inner_btn {
+      background: transparent;
+    }
+
+    &_edit {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: var(--green);
+      padding: 8px;
+      border-radius: 10px;
+      width: 32px;
+      height: 32px;
+
+      &:hover path {
+        stroke: #fff;
+        transition: stroke ease-in-out 0.3s;
+      }
+    }
+
+    &_remove {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background: var(--green);
+      padding: 8px;
+      border-radius: 10px;
+      width: 32px;
+      height: 32px;
+      transition: stroke ease-in-out 0.3s;
+
+      &:hover path {
+        stroke: #fff;
+        transition: stroke ease-in-out 0.3s;
+
+      }
+    }
+
+    & h3 {
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 700;
+    }
+
+    & p {
+      font-size: 16px;
+      color: var(--white);
+      line-height: 20px;
+      font-weight: 400;
+      max-height: 150px;
+      overflow-x: scroll;
+    }
+  }
+
+  &_inner_create {
+    border: 5px solid var(--green);
+    color: var(--green);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity ease-in-out 0.3s;
+    width: 350px;
+    height: 200px;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  .custom_card {
+    cursor: pointer;
+    width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    padding: 34px 26px;
+  }
+
+  .truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .card_list .custom_card{
+    height: 150px;
+    width: 200px;
+
+  }
+}

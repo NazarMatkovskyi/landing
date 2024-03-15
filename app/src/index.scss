@@ -1,0 +1,28 @@
+
+:root {
+  --height: 100vh; // Use custom height
+  --background-line: #14202a; // Use custom background color
+  --white: #fff; // Use custom text color
+  --black: #000; // Use custom text color
+  --green: #58BC48; // Use custom text color
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+code {
+  font-family:  Ubuntu, monospace;
+}
+
+h1, h2, h3, h4, h5, h6, p, button{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
